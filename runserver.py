@@ -3,7 +3,7 @@ This script runs the FlaskWebProject application using a development server.
 """
 
 from os import environ
-from DataVizProject import app
+from  Team4-CoVID19-Mortality import app
 
 if __name__ == '__main__':
     HOST = environ.get('SERVER_HOST', 'localhost')
