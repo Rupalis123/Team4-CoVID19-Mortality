@@ -1,0 +1,141 @@
+{% extends "layout.html" %} {% block content %}
+
+  <!-- Header -->
+
+  <div margin: 10 auto;>
+
+  <header class="w3-container" style="padding-top:22px;padding-left:2000px">
+    <hr>
+
+    </div>
+    
+    <div class="w3-row-padding">
+      <div class="w3-container w3-center "  id="P&S">
+        <h2>COVID19 Mortality Risk Calculator</h2>
+        </div>
+    <div class="w3-whole">
+      <form class="form-horizontal" action="/results" method="POST">
+
+      <div class="w3-section">      
+        <input class="w3-input" style="width: 400px;" required type="number" required min = "0" max="100" required name=age placeholder="Input Numerical Values 0 to 100">
+
+        <label>Age</label>
+      </div>
+
+      <div class="w3-section">      
+        <br>
+        <!-- <label for="cars">Gender</label> -->
+            <select required id="gender" name="gender_type">
+            <option value="-">Choose your gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+   
+        </select>
+      </div>
+
+
+      <div class="col-md-4">
+      <div class="w3-half">
+        <br>
+        <label>Pre-existing Conditions (Check all that applies)</label>
+        <br>
+        <!-- <input type=“checkbox” name=hypertension" value=“1” checked> -->
+
+        <input id="hypertension" class="w3-check" type="checkbox" name="hypertension">
+        <label>Hypertension</label>
+        <br>
+        <input id="diabetes" class="w3-check" type="checkbox" name="diabetes">
+        <label>Diabetes</label>
+        <br>
+        <input id="cvd" class="w3-check" type="checkbox" name="cvd">
+        <label>Cardiovascular Disease</label>
+        <br>
+        <input id="copd" class="w3-check" type="checkbox" name="copd" >
+        <label>Chronic Bronchitis/Emphysema (COPD)</label>
+        <br>
+        <input id="cancer" class="w3-check" type="checkbox" name="cancer">
+        <label>Any Cancer/Malignancy</label>
+        <br>
+        <input id="kidneydisease" class="w3-check" type="checkbox" name="kidneydisease">
+        <label>Chronic Renal/Kidney Disease</label>
+        <br><br>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+    <div class="w3-half">
+      <br>
+      <label>Symptoms (Check all that applies)</label><br>
+      <input id="Fever" class="w3-check" type="checkbox" name="fever">
+      <label>Fever (Temperature >37C or 98.6F) </label>
+      <br>
+      <input id="breath" class="w3-check" type="checkbox" name="breath">
+      <label>Shortness of Breath</label>
+      <br>
+      <input id="Cough" class="w3-check" type="checkbox" name="cough">
+      <label>Cough</label>
+      <br>
+      <input id="tachypnea" class="w3-check" type="checkbox" name="tachypnea">
+      <label>Tachypnea (Breathing Rate >20/min)</label>
+      <br>
+      <input id="Fatigue" class="w3-check" type="checkbox" name="fatigue">
+      <label>Fatigue</label>
+      <br>
+      <input id="diarrhea" class="w3-check" type="checkbox" name="diarrhea">
+      <label>Diarrhea</label>
+      <br><br>
+
+      <!-- <input class="w3-input" type="submit" required> -->
+      <button>Calculate</button>
+    </div>
+  </div>
+
+  <div margin: 10 auto;></div>
+
+  <header class="w3-container" style="padding-top:22px;padding-left:2000px">
+    <hr>
+
+    </div>
+    <br><br><br>
+    
+    <div class="w3-row-padding">
+
+    <!-- <div class="w3-whole">
+    <form class="w3-container w3-card-4">
+      <label for="output">Your Risk Calculations :</label><input type="text" name="output" value=0></input>
+      <div class="col-md-4">
+      <div class="w3-half">
+    </div>
+  </div> -->
+
+
+
+  <script>
+    // Get the Sidebar
+    var mySidebar = document.getElementById("mySidebar");
+    
+    // Get the DIV with overlay effect
+    var overlayBg = document.getElementById("myOverlay");
+    
+    // Toggle between showing and hiding the sidebar, and add overlay effect
+    function w3_open() {
+      if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+      } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+      }
+    }
+    
+    // Close the sidebar with the close button
+    function w3_close() {
+      mySidebar.style.display = "none";
+      overlayBg.style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
+
+{% endblock %}
