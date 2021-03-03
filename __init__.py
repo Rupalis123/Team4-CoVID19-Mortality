@@ -10,8 +10,8 @@ app = Flask(__name__)
 
 
 def main():
-    from . import views
-    from . import apis
+    from . import app
+    # from . import views
 
 
 main()

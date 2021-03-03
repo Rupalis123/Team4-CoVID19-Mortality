@@ -1,1 +1,1 @@
-web: gunicorn DataVizProject:app
+web: gunicorn Team4-CoVID19-Mortality:app
